@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Functions and Events - JS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+.box{
+	border: 1px solid red;
+	padding: 10px;
+	text-align: center;
+}
+.hide{
+	display: none;
+}
+.error{
+	color: red;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Login Form</h2>
+
+<form action="#" method="post" novalidate name="loginUser">
+  <div class="imgcontainer">
+    <img src="../images/10000coders-logo.png" alt="10000coders" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
+    <span class="hide error" id="userError"> Please enter username</span>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+    <span class="hide error" id="pwdError"> Please enter Password</span>
+        
+    <button type="submit" id="loginBtn">Login</button>
+    <!-- onclick="validateUser(event)" -->
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+<h3>Example for Event Bubling and Event Capturing</h3>
+<div class="box" id="div1">1
+	<div class="box" id="div2">2
+		<div class="box" id="div3">3</div>
+	</div>
+</div>
+
+<script>
+	/*
+		What is functions?
+
+			'Function' is set of statements that can be used to perform a specific task.
+
+		Why functions?
+
+			- To re-use the code
+
+		How many ways/types that we can create a functions?
+
+			- Function with out params
+			- function with params
+			- function wit default params
+			- function with return statement
+			- Variable function
+			- Anonymous function *
+			- call back functions *
+			- Nested functions *
+			- self invoking functions *
+			- IIFA/IIFE *
+			- Recursive functions *
+
+		What is an event?
+
+			'Event' is an action that can be performed by user or system to interact with an application
+
+		Why events?
+
+			- To allow users to interact with an applications
+
+		Types of events?
+
+			- Mouse Events
+				- click
+				- dblclick
+				- mouseover
+				- mouselease
+				- mousemove
+			- Keyboard Events
+				- keypress
+				- keydown
+				- keyup
+			- Form Events
+				- blur
+				- change
+				- submit
+				- reset
+				- focus
+			- Page Events
+				- load
+				- scroll
+				- resize
+
+		What event Bubling & event Capturing?
+	*/
+
+	/* function without params */
+	function add(){
+		let a,b,c;
+		a = 10, b=20;
+		c = a + b;
+		console.log(c);
+	}
+	add();
+	add();
+	add();
+	add();
+
+	function multiplication(num){
+		for(let i=1;i<=10;i++){
+			console.log(num+'*'+ i +' = '+num*i);
+		}		
+	}
+	multiplication(4);
+	multiplication(14);
+	multiplication(17);
+
+	/* Example for IIFA/IIFE/self invoking */
+	(function(){
+		alert('i am calling immediatly on the page load');
+	})();
+	/* Creating a function */
+
+	function validateUser(event) {
+		event.preventDefault();
+	}
+
+	/* How to attach Js event using Pure Js */
+	document.getElementById('loginBtn').addEventListener('click',function(event){
+
+		event.preventDefault();
+
+		let username, password;
+
+		username = document.getElementById('uname').value;
+		password = document.getElementById('psw').value;
+
+		if(username==''){
+			document.getElementById('uname').style.border = '1px solid red';
+			document.getElementById('psw').style.border = '1px solid #ccc';
+			document.getElementById('userError').style.display = 'block';
+			document.getElementById('pwdError').style.display = 'none';
+
+		}else if(password==''){
+			document.getElementById('uname').style.border = '1px solid #ccc';
+			document.getElementById('psw').style.border = '1px solid red';
+			document.getElementById('userError').style.display = 'none';
+			document.getElementById('pwdError').style.display = 'block';
+		}else{
+			loginUser.submit();
+		}
+
+	})
+
+	/* Blur event Example */
+
+	document.getElementById('uname').addEventListener('blur',function(){
+		let username;
+
+		username = document.getElementById('uname').value;
+
+		if(username==''){
+			document.getElementById('uname').style.border = '1px solid red';
+			document.getElementById('userError').style.display = 'block';
+		}
+
+	});
+	document.getElementById('psw').addEventListener('blur',function(){
+		let password;
+
+		password = document.getElementById('psw').value;
+
+		if(password==''){
+			document.getElementById('psw').style.border = '1px solid red';
+			document.getElementById('pwdError').style.display = 'block';
+		}
+
+	});
+
+	/* Event Bubling example */
+
+	document.getElementById('div1').addEventListener('click',function(event){
+		//console.log(event);
+		alert('I am child 1');
+	});
+	document.getElementById('div2').addEventListener('click',function(event){
+		event.stopPropagation();
+		alert('I am child 2');
+	});
+	document.getElementById('div3').addEventListener('click',function(event){
+		event.stopPropagation();
+		alert('I am child 3');
+	});
+
+	/* Event capturing example */
+
+	// document.getElementById('div1').addEventListener('click',function(event){
+	// 	event.stopPropagation();
+	// 	alert('I am child 1');
+	// },true);
+	// document.getElementById('div2').addEventListener('click',function(event){
+	// 	event.stopPropagation();
+	// 	alert('I am child 2');
+	// },true);
+	// document.getElementById('div3').addEventListener('click',function(event){
+		
+	// 	alert('I am child 3');
+	// },true);
+
+	/* 
+
+	Tasks 
+
+		1) Diff b/w bubling and capturing with example?
+		2) Diff b/w stopPropagation() & stopImediatePropagation()?
+		3) Create image slider using pure Javascript?
+		4) Create a gmail registration and facebook registration and apply js validation for each and every field?
+		5) write a program to validate aadhar format, url format, email format, phone format , credit card format using functions?
+	
+	*/
+
+	/*
+		Presentaion skills : 
+		Problem Solving Skills: 
+		Examples Skills : 
+		Timesense Skills: 
+		Interaction Skills:
+		Technical Skills:
+	*/
+</script>
+</body>
+</html>

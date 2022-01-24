@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animation Prperty - CSS</title>
+	<style>
+		.multiColor{
+			background: linear-gradient(orange,white,green);
+			text-align: center;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			line-height: 100px;
+			position: relative;
+			/*animation-name: rot360;
+			animation-delay: 2s;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+			animation-timing-function: ease-in;*/
+			animation: rot360 3s 1s ease-in infinite;
+		}
+
+		@keyframes rot360{
+
+			from{
+				left:0;
+				transform: rotate(0deg);
+			}
+			to{
+				left:90%;
+				transform: rotate(360deg);
+			}
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="multiColor">CSS</div>
+	<div class="multiColor">CSS</div>
+	<div class="multiColor">CSS</div>
+	<div class="multiColor">CSS</div>
+	<div class="multiColor">CSS</div>
+	<div class="multiColor">CSS</div>
+</body>
+</html>

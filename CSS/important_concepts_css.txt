@@ -1,0 +1,282 @@
+1) Why Css?
+	- Css for styling the elements
+2) Why we should we style?
+	- To attaract the users, so that users can give more business 
+3) How to apply css styles?
+	- There are 3-4 ways to apply css 
+		- inline
+		- internal
+		- external(Recommended)
+		- @import 
+
+4) Core concepts of css?
+
+	- Selectors
+
+	 4.1 What is selectors?
+
+	 	- Which helps us to select an element inside the body , so that we can style an element to attract or present the data in beautiful way.
+
+	 4.2 Types of selectors
+
+	 	- Global (*) -  Which selects all the elements inside the body
+
+	 	- Tag/Element - Which selects only respective tags
+
+	 	- class (.) - which selecs only respctive elements as per their class value. We use class selectors to re-use the css.
+
+	 	- Id (#) - which selecs only respctive elements as per their id value.We use id selectors to select unique element.
+
+	 	Note * - Id should not be duplicated
+
+	 	- Attributes selectors ([])
+
+	 		- has attributes 
+	 			Syntax - [attr-name]
+	 		- attr value equals to
+	 			Syntax - [attr-name="attr-value"]
+	 		- attr value starts with
+	 			Syntax - [attr-name ^='attr-value']
+	 		- attr value ends with
+	 			Syntax - [attr-name $='attr-value']
+	 		- attr value contains
+	 			Syntax - [attr-name *='attr-value']
+
+	 	- Decendant selector - Selects all the childrens who are there inside a parent. 
+
+	 		Synatax:-
+	 			selector selector{
+
+	 			}
+	 		Example:-
+
+	 			ul li {
+
+	 			}
+
+
+	 	- direct child selector
+	 		-  Selects only childrens of a perticular parent.
+	 		
+	 		Synatax:-
+	 			selector > selector{
+
+	 			}
+
+	 		Example:-
+
+	 			ul > li
+
+	 	- sibling selectors - selects an element who is next to particular element
+	 		
+	 		- adjacent sibling selector
+
+	 			Syntax:- 
+
+	 				selector + selector{
+
+	 				}
+
+	 			Example:- 
+
+	 				tr + tr {
+
+	 				}
+
+	 		- General sibling selector
+
+	 			tr ~ tr{
+
+	 			}
+
+	 	- Psuedo selectors - Selects an element as per their state with in the dom.
+
+	 		- Psuedo class - 
+
+	 			Synatax:- 
+
+	 				selector:ele-state {
+
+	 				}
+
+	 			Example:-
+
+	 				a:hover{
+	 					color: gold;
+	 				}
+	 				ul li:hover{
+
+	 				}
+
+	 		- Psuedo element
+
+	 			Synatax:- 
+
+	 				selector::ele-state {
+
+	 				}
+
+	 			Examples: 
+
+	 			p::selection{
+
+	 			}
+
+	 			div::first-letter{
+
+	 			}
+	 			div::before{
+
+	 			}
+	 			li::after{
+
+	 			}
+
+	 	- group selectors - selects multiple elements inside a page
+
+	 			syntax:- 
+
+	 				selector,selector,selector{
+
+	 				}
+
+	 			Examples:-
+
+	 			 	p,div,li,a,h1{
+	 			 		font-size: 12px;
+	 			 	}
+
+	 	- combinators - selects an element based on the above selectors combinations
+
+	 		Synatax:-
+
+	 			selector selector,selector > selector, selector + selector
+
+	 		Examples:-
+
+	 		ul *{
+
+	 		} 
+
+	 		.box #conatiner{
+
+	 		}
+
+	 		[class='box'] > li{
+
+	 		}
+
+	- Properties
+
+		- Box Model Properties
+			- border
+				- border-width
+				- border-style
+				- border-color(optional)
+				- border-image
+				- border-raidus
+
+			- padding
+				- padding-top
+				- padding-right
+				- padding-bottom
+				- padding-left
+			- margin
+				- margin-top
+				- margin-right
+				- margin-bottom
+				- margin-left
+				
+		- Box-shadow
+
+		- Diemension Properties
+
+			- width
+				- min-width
+				- max-width
+			- height
+				- min-height
+				- max-height
+
+		- layout Properties
+
+			- What is layout ?
+
+			- How many ways that we can create a layout?
+
+				- float
+				- flex-box - display:flex
+
+					- container properties
+
+						- flex-direction
+						- flex-wrap
+						- justify-content
+						- align-content
+						- align-items
+
+					- Flex item properties
+						- flex
+							- flex-grow
+							- flex-basis
+							- flex-shrink
+						- order
+						- align-self
+				- grid
+				
+			- Diff b/w each one of the above ?
+
+			- Resposive Web Design (RWD) - @media rules
+
+		- Background Properties
+
+			- Background color
+
+				background-color : predefined/hexa decimal/rgb()/rgba();
+
+			- Background image
+
+				background-image : url('path');
+
+					- background-repeat
+					- background-position
+					- background-attachment
+					- background-size
+					- background-clip
+					- background-origin
+
+			- Positions - Which can be used to place or move an element any where in the page
+
+				- static (default)
+				- absolute - 
+				- relative
+				- fixed
+				- sticky
+
+			- Transform
+
+				- translate(tx,ty)
+				- scale(sx,sy)
+				- skew(sx,xy)
+				- rotate(deg)
+
+			- trasitions
+
+				- trasition-property
+				- trasition-delay
+				- trasition-duration
+				- transition-timing-function
+
+			- animation - @keyframes
+
+				- animation-name
+				- animation-delay
+				- anumation-duration
+				- animation-timing-function
+				- animation-iteration-count
+
+			- Font Properties
+
+			- Text Properties
+
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Header - HTML</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		header{
+			display: flex;
+			background-color: #000;
+			padding: 20px;
+		}
+
+		header *{
+			color: #fff;
+		}
+		header div{
+			flex: 1;
+		}
+		header nav{
+			flex: 11;
+		}
+
+		nav ul{
+			display: flex;
+			padding-top: 14px;
+		}
+		nav ul li{
+			flex: 1;
+			list-style: none;
+			color: red;
+			font-size: 20px;
+			text-align: center;
+		}
+		.logo-txt{
+			font-size: 44px;
+		}
+		.logo-txt span{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+<header>
+	<div>
+		<h1 class="logo-txt">e-<span>cart</span></h1>
+	</div>
+	<nav>
+		<ul>
+			<li>Home</li>
+			<li>About</li>
+			<li>Categories</li>
+			<li>Blog</li>
+			<li>Contact</li>
+		</ul>
+	</nav>
+</header>
+</body>
+</html>

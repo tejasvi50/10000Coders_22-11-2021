@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Storage techniques - JS</title>
+	<style>
+		body{
+			letter-spacing: 5px;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+
+<script>
+	/*
+		Storage Techniques - To store an information that can be used while implementing the functionality.
+
+		How many ways that we can store the data in JS?
+
+			- There are majorly 4 ways
+
+				- Strings
+
+					- Squence / group of charaters 
+
+					How to create a string?
+
+						We can create a string two ways 
+							- String literal(Recommanded)
+							- string constructor
+				- Arrays
+				- Objects
+				- Array of Objects
+	*/
+
+	/* String Literal */
+	let disease = 'covid-19';
+
+	let variaent_name = "Omricon Identified in the month of November";
+
+	/* String Constructor */
+	let dob_of_covid19 = new String('Dec 2019');
+
+	console.log(typeof disease);
+	console.log(typeof dob_of_covid19);
+
+	/* String Property */
+
+		console.log(dob_of_covid19.length);
+
+	/* 
+		String Methods 
+			
+			- indexOf()
+				- Finding the first occurance of given character
+			- lastIndexOf()
+				- Finding the last occurance of given character
+			- charAt()  				
+			- charCodeAt() -
+			- substr()
+			- substring() - 
+			- split() - 
+			- trim()
+			- toUpperCase()
+			- toLowerCase()
+			- Search()
+			- join() - 
+			- concat()
+	*/
+
+	document.write(variaent_name);
+	/* Example of indexOf() */
+	console.log(disease.indexOf('i'));
+	console.log(variaent_name.indexOf('i'));
+
+	/* Example of lastIndexOf() */
+
+	console.log(variaent_name.lastIndexOf('i'));
+
+	/* Example for charCodeAt() */
+	console.log(variaent_name.charCodeAt(3));
+	console.log(variaent_name.charCodeAt(0));
+	console.log(variaent_name.charCodeAt(10000));
+
+	/* Example for substring() */
+
+	console.log(variaent_name.substring(0,10));
+	console.log(variaent_name.substring(10,5));
+
+	/* Example for split() */
+
+	console.log(variaent_name.split(' '));
+
+	let convertedArray = variaent_name.split(' ');
+
+	console.log(convertedArray[convertedArray.length-2]);
+
+	/* Example for join method */
+	console.log(variaent_name.split(' ').join(' '));
+
+	/* 
+
+	Tasks 
+
+		1) WAP to find out the no of occurances of a given character?
+		2) WAP to find the diff b/w indexOf() & Search()?
+		3) WAP to find the d/f b/w substr() & substring()?
+		4) WAP to restrict user to select only 'png' format of image?
+		5) WAP to restrict a user to select only 'docx' format of string? 
+		6) WAP to understand the all above string methods practically?
+	*/
+
+	/* 
+		Arrays - Continuous memory allocation of same type or diff type
+
+		How many ways we can create an array?
+
+			- Array Literal
+			- Array Constructor
+	*/
+		/* Array literal Example */
+
+		let students = ['Manoj','Musthafa','Sai','Dinakar','Sridhar','Bhemmshanker','Yamini','Shravya','Tejaswi'];
+		console.log(students);
+
+		/* Array Constructor Example */
+		let concepts = new Array('HTML','CSS','JS');
+
+		console.log(concepts);
+		console.log(typeof students,typeof concepts);
+
+		// How to retrive values from an array - Using Static indexes
+
+		console.log(students[0])
+		console.log(students[1])
+		console.log(students[2])
+		console.log(students[3])
+
+		/* Retriving values using loops */
+		console.log('Reading values from an array using loops');
+		for(let i=0;i<students.length;i++){			
+			console.log(students[i]);
+		}
+
+		/* 
+			Array Predifined Methods 
+
+				1) push(item-1,item-2..item-n) - Inserting one/more value into array at last position
+				2) pop() - Deleting last value from array
+				3) shift() - Deleting the first value from array
+				4) unshift() - Inserting one/more value into array at first position
+				5) slice() - Extracting a porting of an array
+				6) splice() - Add/remove any where from array
+		*/
+
+		students.push('Haripriya','Sachin','Kohli');
+		console.log(students);
+		students.pop();
+		console.log(students);
+		students.pop();
+		console.log(students);
+		students.shift();
+		console.log(students);
+
+		/* 
+			Tasks 
+
+				1) WAP to delete all the elements from an array?
+
+		*/
+
+		/*
+			Objects - Object can also be used to store multiple values of a single entity using 'key : value'; pair.
+
+			How many types of Object creation in JS?
+
+				- Object Literal
+				- Object ConStructor
+		*/
+
+		/* Object Literal */
+		let student_info = {
+			name:'Murali',
+			qualification:'MCA',
+			designation:'Architect',
+			email:'pagadala1986@gmail.com'
+		}
+
+		/* Retrival using manual approach */
+		console.log(student_info.name);//Murali
+		console.log(student_info.qualification);//MCA
+		console.log(student_info.designation);//MCA
+		console.log(student_info.email);//MCA
+
+		/* Retrival using loops */
+		console.log('Retrival using loops');
+		for(let student in student_info){
+			console.log(student_info[student]);
+		}
+
+		/* Retrive only keys */
+		let allKeys = Object.keys(student_info);
+		console.log(allKeys);
+		console.log(allKeys.length);
+		/* Retrive only values */
+		let allValues = Object.values(student_info);
+		console.log(allValues);
+
+		/* Object constructor */
+
+		let product_info = new Object();
+
+		product_info.name = 'Mac Book';
+		product_info.model = 'M001';
+		product_info.price = 2323232;
+
+		/* Retrival using manual */
+		console.log(product_info.name);
+		console.log(product_info.model);
+		console.log(product_info.price);
+
+		console.log('Retrival using loops');
+		for(let product in product_info){
+			console.log(product_info[product]);
+		}
+
+		/*
+			Array of Object - Storing object into an array
+
+		*/
+
+		let student_details = [
+			{
+				name:'Murali',
+				qualification:'MCA',
+				designation:'Architect',
+				email:'pagadala1986@gmail.com'
+			},
+			{
+				name:'Murali 1',
+				qualification:'MCA 1',
+				designation:'Architect 1',
+				email:'pagadala1986-1@gmail.com'
+			},
+			{
+				name:'Murali 2',
+				qualification:'MCA 2',
+				designation:'Architect 2',
+				email:'pagadala1986-2@gmail.com'
+			},
+			{
+				name:'Murali 3',
+				qualification:'MCA 3',
+				designation:'Architect 3',
+				email:'pagadala1986-3@gmail.com'
+			}
+		]
+
+		// Retrival using Manual
+
+		console.log(student_details[0].name)
+		console.log(student_details[0].qualification)
+		console.log(student_details[0].designation)
+		console.log(student_details[0].email)
+
+		/* Retrival using Loops */
+		console.log('Retriving using Loops');
+		for(let i=0;i<student_details.length;i++){
+			console.log('******************Iteration '+ (i+1) +'************');
+			console.log(student_details[i].name);
+			console.log(student_details[i].qualification);
+			console.log(student_details[i].designation);
+			console.log(student_details[i].email);
+		}
+
+		/* Tasks 
+
+			1) Create a table using the above student_details array of object?
+			2) WAP to generate list of products similar flipkart way of presentaion? Ref - https://www.flipkart.com/mobiles/~mobile-phones-under-rs15000/pr?sid=tyy%2C4io
+			
+			3) What is events? Why?
+			4) How many types of event and understand each one of them?
+			5) what is Event Bubling & Event Capturing?
+		*/
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Psuedo Class & Psuedo Element - CSS Selectors </title>
+	<style>
+		a:hover{
+			font-size: 18px;
+			color: gold;
+		}
+		li:hover{
+			border: 4px dashed green;
+		}
+		li:first-child{
+			border: 1px solid red;
+		}
+		li:last-child{
+			border: 3px dotted red;
+		}
+		li:nth-child(2){
+			background-color: red;
+		}
+
+		li::selection{
+			background-color: red;
+		}
+
+		p::first-letter{
+			font-size: 100px;
+		}
+	</style>
+</head>
+<body>
+	<a href="#">Home</a>
+	<a href="#">About</a>
+	<a href="#">Services</a>
+	<a href="#">Clients</a>
+	<a href="#">Contact</a>
+
+	<ul>
+		<li>HTML 1</li>
+		<li>HTML 2</li>
+		<li>HTML 3</li>
+		<li>HTML 4</li>
+		<li>HTML 5</li>
+	</ul>
+
+	<p>A pseudo-class is used to define a special state of an element.</p>
+</body>
+</html>

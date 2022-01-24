@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Operators,Conditions and Loops - JS</title>
+</head>
+<body>
+
+<script>
+	/*
+		1) What is Operators?
+
+			- To perform some opertaions we should use operators
+
+		Why Operators?
+
+			- To implement the functionality / to perform some calcumation / to build logics
+
+		How many types ?
+
+			- Assignment(=,+=,-=,*=,/=)
+			- Arthimetic(+,-,*,/,%)
+			- logical(&&,||,!)
+			- comparission(==,===,>,<,>=,<=,!=)
+			- Conditional(?:)
+			- Increment/Decrement
+				- pre-increment
+					++i;=>i + 1 = i;
+				- post-increment
+				 	i++;=>i = i + 1;
+				- pre-decrement
+					--i;=>i - 1 = i;
+				- post-decrement
+					i--;=> i = i - 1;
+		
+		Diff b/w == & === ?
+		
+			=>  '=='' equals to check the value where as '===' checks the value along with their type
+
+
+	*/
+		let num = '10';
+
+		/* Example 1 */
+
+		if(num%2===0){ 
+			console.log('Given number is Even');
+		}else{
+			console.log('Given Number is Odd');
+		}
+
+		/* Example 2 */
+
+		(num%2===0)
+		? console.log('Given number is Even') 
+		: console.log('Given Number is Odd');
+
+		/* Example 3 */
+		let a,b,c,d;//declaration
+
+		a = 10;
+		b = '20';
+		d = 30;
+
+		console.log(a+b);//1020
+		console.log(a+b%c);//NaN
+		console.log(a+b+c+d);//1020undfined30
+		console.log(a+b+d);//1020230
+		console.log(a+d);//40
+
+		/* Example 4 */
+
+		for(let i=0;i<5;i++){
+			console.log('Welcome to 10000coders Hyderabad');
+		}
+		for(let i=0;i<5;++i){
+			console.log('Welcome to 10000coders Hyderabad');
+		}
+
+		let student = 'Manoj';
+
+		for(let i=student.length;i>=0;i--){
+			console.log(student[i]);
+		}
+
+		/* WAP to check whether given string palimdrome */
+
+		let str = 'manoj';
+		let revStr = '';
+		for(let i=str.length-1;i>=0;i--){
+			revStr +=str[i];// revStr = revStr +str[i]
+		}
+		// Iteration 1 => revStr = revStr + str[4] => j;
+		// Iteration 2 => revStr = revStr + str[3] =>jo;
+		// Iteration 3 => revStr = revStr + str[2] =>jon;
+		// Iteration 4 => revStr = revStr + str[1] =>jona;
+		// Iteration 5 => revStr = revStr + str[0] =>jonam;
+
+		// Iteration 6 => revStr = revStr + str[-1] =>loop ternimates;
+		
+		console.log(revStr);
+
+		(str==revStr)
+		?console.log('Given string is Palimdrome')
+		:console.log('Given string is Not a Palimdrome');
+
+		/*
+
+			2) Conditions - To take any sort of decission
+
+				Why ? 
+
+					- Decession making
+
+				Types - 
+
+					=> if(cond)
+
+					=> if(cond)...else
+
+					=> if(cond)...else if(cond)...else if(cond)...else
+
+					=>switch(opt){
+						case 1: statement(s);
+								break;
+						case 2: statement(s);
+								break;
+						case 3: statement(s);
+								break;
+								.
+								.
+								.
+						case n: statement(s);
+								break;
+						default: statement(s);
+								break;
+					}
+
+
+			3. Loops - To perform / execute statements no of time / over a period of times
+
+				Why ?
+
+					To iterate statements we must use loops
+
+				Types - 
+						
+					- for loop
+
+						Syntax :-
+
+						=> for(initialize;condition;increment/decrement){
+							statement(s);
+						}
+							
+					- while loop
+
+						Syntax :-
+
+						=> initialize;
+
+							while(condition){
+								statement(s);
+								icrement/decrement;
+							}
+
+					- do...while
+
+						Synatax :- 
+
+						Syntax :-
+
+						=> initialize;
+
+							do {
+
+								statement(s);
+								icrement/decrement;
+
+							}while(condition);
+	
+		*/
+
+
+		/* Examples for loops */
+
+		let program_name = 'Mern stack training under the guidance of Murali P';
+
+		console.log(program_name.length);
+
+		/* How to find length of string with out using 'length' property */
+
+		let sum_of_character_index = 0;
+
+		for(let i=0;i<program_name.length;i++){
+			sum_of_character_index += i;
+		}
+
+		// Explanation
+		/*
+			Iteration 1 - no_of_character = no_of_character + i => no_of_character = 0 + 0
+			Iteration 2 - no_of_character = no_of_character + i => no_of_character = 0 + 1
+			Iteration 3 - no_of_character = no_of_character + i => no_of_character = 1 + 2
+			Iteration 4 - no_of_character = no_of_character + i => no_of_character = 3 + 3
+			Iteration 4 - no_of_character = no_of_character + i => no_of_character = 6 + 4
+			.
+			.
+			.
+			Iteration 49 - no_of_character = no_of_character + i => no_of_character =  + 0
+		*/
+
+		console.log(sum_of_character_index);
+
+		/* Example for 'while' loop */
+
+		let sum_of_character_index_while = 0;
+		let j=0;
+		while(j<program_name.length){
+			sum_of_character_index_while += j;
+			j++;
+		}
+
+		console.log(sum_of_character_index_while);
+
+		/* Example for 'do..while' loop */
+
+		let sum_of_character_index_do_while = 0;
+		let k=0;
+		do{
+			sum_of_character_index_do_while += k;
+			k++;
+		}while(k<program_name.length)
+
+
+		console.log(sum_of_character_index_do_while);
+
+		
+</script>
+</body>
+</html>

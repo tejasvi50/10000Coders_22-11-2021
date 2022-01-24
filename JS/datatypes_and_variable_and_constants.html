@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Datatypes,Variables and Constants - JS</title>
+	<style>
+		.box{
+			border: 1px solid red;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+<script>
+	var course_name = 'MERN Stack Training';
+
+	let trainer_details;
+
+	console.log(trainer_details);
+
+	document.write('<h1 class="box">'+course_name+'</h1>');
+	document.write('<h1 class="box">'+typeof course_name+'</h1>');
+
+	/* 
+		Rules while creating the Identifiers in JS 
+		
+			1) Identifier name should not be a reserve word
+			2) Identifier name shouldn't start with number, but it contains Number
+
+				Ex: 
+
+					var 5g;- Invalid variable name because it starts with number
+
+					var g5; - valid
+
+			3) Identifier names shouldn't contain any special characters other than 'underscore(_)' or $
+
+				Ex: - 
+
+				var trainer name = 'Murali P'; - invalid because 'space' we used 
+
+				var trainer_name = 'Murali P'; - valid
+
+				var trainer$name = 'Murali P'; valid
+
+
+	*/
+
+	/* 
+		1) What is the diff b/w var and let?
+
+			- The variable which are declared by 'var' keyword can be accessible by using 'window' object where as vaiables which are declared by 'let' keyword can't accessible by 'window' Object
+
+			- 'Let' variables can't be hoisted where as 'var' variables can be hoisted
+
+		2) What is scope?
+
+			Checking the availability or accessability of an identifier in the program called as Scope.
+
+		3) Types of scope ?
+
+			- Global scope
+				- Page specifiec scope
+			- Local scope
+				- Function specific scope
+			- Block level scope
+				- Specific to certain block
+			- Super Global scope
+				- Specific to project
+
+		4) What is Hoisting?
+
+			we can access the variables before they declare.
+
+			Types of Hoisting
+
+				- Variable Hoisting
+				- Function Hoisting
+
+		5) What is variables & constants ?
+
+			Varibles - Whose value may varies
+
+			Constant - Whose value can't change
+
+		6) What is the diff b/w 'undefined' and 'not defined'?
+
+		7) What is the diff b/w variable & constant ?
+
+		8) Types of errors in Js?
+
+			- Syntax Errors
+			- Reference Errors
+			- Type Errors
+
+	
+	*/
+
+	//console.log(a,b);
+
+	var a;
+
+	a = 20;
+
+	let b;
+
+	b = 10;
+
+	console.log(window.a,b);
+
+	var g5 = 'Spectrum 5.0';
+
+	console.log(g5);
+
+	var trainer_name = 'Murali P'; 
+
+	var trainer_name = 'Murali';
+
+	var trainer$name = 'P Murali';
+
+	console.log(trainer_name,trainer_name,trainer$name);
+
+
+	/* Diff b/w variable and constant */
+
+	let mode_of_training = 'Online';
+
+	const duration_of_training = '3 Months';
+
+	console.log(mode_of_training);//Online
+
+	console.log(duration_of_training)// 3 Months
+
+	mode_of_training = 'Offline';
+
+	//duration_of_training = '4 Months';
+
+	console.log(mode_of_training,duration_of_training);
+
+
+	
+</script>
+</body>
+</html>

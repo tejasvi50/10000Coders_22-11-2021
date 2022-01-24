@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OOP - JS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+.box{
+	border: 1px solid red;
+	padding: 10px;
+	text-align: center;
+}
+.hide{
+	display: none;
+}
+.error{
+	color: red;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<form action="#" method="post" novalidate name="loginUser">
+  <div class="imgcontainer">
+    <img src="../../images/10000coders-logo.png" alt="10000coders" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
+    <span class="hide error" id="userError"> Please enter username</span>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+    <span class="hide error" id="pwdError"> Please enter Password</span>
+        
+    <button type="submit" id="loginBtn">Login</button>
+    <!-- onclick="validateUser(event)" -->
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+<script>
+	/*
+		The main priciples of OOP - JS
+
+			- Data Encapsulation - Wrapping data and methods/memebers into single unit
+
+				- We can organize the code of application easily
+				- We can create modular structure to our application
+				- we can reduce the complexity
+				- we can improve the readability
+				- we can also improve performance
+
+			How many ways that we can encapsulate?
+
+				- Object Constructor
+				- Object Literal
+				- Predefined Object
+
+	*/
+
+	/* Object Constructor - Example */
+
+	function User(uname,email,qual,exp){
+		// properties
+		this.name = uname;
+		this.email = email;
+		this.qualification = qual;
+		this.experience = exp;
+		// methods
+		this.details = function(){
+			return this.name+' has '+this.experience+', he has '+ this.qualification+' degree and his email is '+this.email;
+		}
+
+		this.login = function(event){
+
+			event.preventDefault();
+
+			let username, password;
+
+			username = document.getElementById('uname').value;
+			password = document.getElementById('psw').value;
+
+			if(username==''){
+				document.getElementById('uname').style.border = '1px solid red';
+				document.getElementById('psw').style.border = '1px solid #ccc';
+				document.getElementById('userError').style.display = 'block';
+				document.getElementById('pwdError').style.display = 'none';
+
+			}else if(password==''){
+				document.getElementById('uname').style.border = '1px solid #ccc';
+				document.getElementById('psw').style.border = '1px solid red';
+				document.getElementById('userError').style.display = 'none';
+				document.getElementById('pwdError').style.display = 'block';
+			}else{
+				loginUser.submit();
+			}
+
+		}
+		this.forgotPassword = function(){
+
+		}
+		this.registerUser = function(){
+
+		}
+
+		this.callingAnotherMethod = function(){
+			let result = this.details();
+			console.log(result)
+		}
+	}
+
+	/* 
+		Inheritance - Aquring parent properties and methods into child class
+
+		Why ? 
+
+			- Code Re-usability
+			- Fast Development
+
+		Types ?
+
+			- Single Inheritance (Recommended)
+			- Multiple
+			- Multilevel
+			- Hybrid
+			- Heiarchical
+
+	*/
+
+	// Instance creation of User construtor
+	let uObj = new User('sachin','sachin@gmail.com','10th','1');
+
+	document.write('<h1>'+uObj.details()+'</h1>');
+	document.write('<h1>'+uObj.details()+'</h1>');
+	document.write('<h1>'+uObj.details()+'</h1>');
+	document.write('<h1>'+uObj.callingAnotherMethod()+'</h1>');
+	// document.write('<h1 style="color:red;">'+uObj.address+'</h1>');
+	// document.write('<h1 style="color:red;">'+uObj.changePassword()+'</h1>');
+
+	// Attaching click event to loginBtn
+
+	document.getElementById('loginBtn').addEventListener('click',uObj.login);
+
+	User.prototype.address = 'Bangalore';
+	User.prototype.changePassword = function() {
+		return 'change password login we should implement here';
+	};
+
+	/* Creating Multiple instance to Object Constructor */
+	let uObj1 = new User('Virat','virat@gmail.com','12th','2');
+
+	document.write('<h1>'+uObj1.details()+'</h1>');
+	document.write('<h1 style="color:red;">'+uObj1.address+'</h1>');
+	document.write('<h1 style="color:red;">'+uObj1.changePassword()+'</h1>');
+
+	let uObj2 = new User('Dhoni','dhoni@gmail.com','Degree','3');
+	
+	document.write('<h1>'+uObj2.details()+'</h1>');
+	document.write('<h1 style="color:red;">'+uObj2.address+'</h1>');
+	document.write('<h1 style="color:red;">'+uObj2.changePassword()+'</h1>');
+
+	/* Object Literal - Example */
+
+	let Product = {
+		//properties
+		name:'Mac Book',
+		model:'Air',
+		price: 324785,
+		//members/methods
+		details:function(){
+			return this.name+' , model is '+this.model+' and the price of this product is '+this.price;
+		},
+		addProduct: function(){
+
+		},
+		deleteProduct:function(){
+
+		},
+		addProductToCart: function(){
+
+		},
+		deleteProductFromCart: function(){
+			this.addProduct();
+		},
+		calculationFinalPrice:function(sp,gp=10){
+			return sp+(sp*gp/100);
+		}
+	}
+
+	document.write('<h1>'+Product.details()+'</h1>');
+
+	/* 
+		Polymorphism - An ability to make use of one method into multiple forms is know  Polymorphism
+
+		Why?
+
+			- Code Re-usability
+			- Code Quality
+
+		Types?
+
+			- Operator Overloading
+			- Method Overloading
+
+	*/
+
+	console.log(Product.calculationFinalPrice(500,18));
+	console.log(Product.calculationFinalPrice(500));
+	console.log(Product.calculationFinalPrice(500,50));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Transform - CSS</title>
+	<style>
+		.multiColor{
+			background: linear-gradient(orange,white,green);
+			text-align: center;
+		}
+		.multiColor:first-child{			
+			transform: translate(100px,200px);
+		}
+		.multiColor:nth-child(2):hover{			
+			transform: scale(1.1,1.1);
+		}
+		.multiColor:nth-child(3){			
+			transform: skew(15deg,30deg);
+		}
+		.multiColor:last-child{			
+			transform: rotate(90deg);
+		}
+	</style>
+</head>
+<body>
+	<section class="multiColor">
+		<h3>Child 1</h3>
+	</section>
+	<section class="multiColor">
+		<h3>Child 2</h3>
+	</section>
+	<section class="multiColor">
+		<h3>Child 3</h3>
+	</section>
+	<section class="multiColor">
+		<h3>Child 4</h3>
+	</section>
+</body>
+</html>

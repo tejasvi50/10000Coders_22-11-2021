@@ -1,0 +1,40 @@
+1) What is Javascript?
+
+	Client side scripting language which will be used for adding the behaviour to element / interaction to elements and more.
+
+2) Scripting VS Programing?
+
+	* Majarity of the scirpting languages compiles their program by Interpreters.
+
+	  Where as Programing languages compiles their program by Compilers.
+
+	* JS is loosely coupled where as other programing language are tightly coupled. 
+	
+3) Interpreter VS Compiler?
+
+4) Functional Programing VS Object Oriented Programing?
+
+**** Core Concepts of Javascript *****
+
+1) Datatypes - Which determines what sort of data that we store inside the memory
+
+	a) Number
+	b) String
+	3) undefined
+	4) null
+	5) boolean
+	6) object
+
+2) Indentifiers,Variables & Constants
+
+3) Operators
+	
+	- To perform some opertaions we should use operators
+
+	
+
+
+	 
+
+
+

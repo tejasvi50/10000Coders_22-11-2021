@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selectors Examples - CSS</title>
+	<style>
+		/*
+			Global selectors (*)
+		*/
+		*{
+			color: red;
+		}
+		/*
+			Tag Selectors
+		*/
+		h1{
+			font-size: 40px;
+			color: green;
+		}
+		.box{
+			border: 1px solid red;
+			padding: 10px;
+			background-color: #ccc;
+		}
+
+		#container{
+			border: 10px dashed gold;
+		}
+
+		/* Attribute selectors */
+
+		/* Has attribute */
+		[src]{
+			border: 10px dotted orange;
+		}
+		/* attr value equals to */
+		[class='box']{
+			background-color: blue;
+		}
+
+		/* attr value starts with */
+		[id ^='con']{
+			color: yellow;
+		}
+
+		/* attr value ends with */
+		[style $='red;']{
+			background-color: gold;
+		}
+
+		/* attr value contains */
+		[ alt *='monoj']{
+			border: 5px double red;
+		}
+	</style>
+</head>
+<body>
+	<h1>Welcome to HTML</h1>
+	<h2>Welcome to HTML</h2>
+	<h3 id="container">Welcome to HTML</h3>
+	<h4>Welcome to HTML</h4>
+	<h5 id="content">Welcome to HTML</h5>
+	<h6 class="box">Welcome to HTML</h6>
+
+	<span>Welcome to CSS</span>
+	<span>Welcome to CSS</span>
+	<span>Welcome to CSS</span>
+	<span>Welcome to CSS</span>
+
+	<p>The <span style="font-weight: bold;color: red;">HyperText Markup Language</span>, or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets and scripting languages such as JavaScript.</p>
+
+	<a href="https://www.10000coders.co/" target="_blank">10000 Coders</a>
+	<a href="https://www.10000coders.co/" target="_blank">10000 Coders</a>
+	<a href="https://www.10000coders.co/" target="_blank">10000 Coders</a>
+	<a href="https://www.10000coders.co/" target="_blank">10000 Coders</a>
+
+	<!-- ABSOLUTE PATH -->
+	<img src="https://www.10000coders.co/assets/10000coders-logo.png?v=1.0" alt="10000coers">
+	<img src="https://www.10000coders.co/assets/10000coders-logo.png?v=1.0" alt="10000coders">
+	<img src="https://www.10000coders.co/assets/10000coders-logo.png?v=1.0" alt="10000coders">
+	<img src="https://www.10000coders.co/assets/10000coders-logo.png?v=1.0" alt="10000coders">
+	<img src="https://www.10000coders.co/assets/10000coders-logo.png?v=1.0" alt="10000codersmonoj">
+
+	<!-- relative path -->
+	<img src="../images/10000coders-logo.png?v=1.0" alt="10000coders">
+
+	<ul>
+		<li class="box">HTML 1.0</li>
+		<li>HTML 2.0</li>
+		<li>HTML 3.0</li>
+		<li>HTML 4.0</li>
+		<li>HTML 5.0</li>
+	</ul>
+
+	<ol>
+		<li>CSS 1.0</li>
+		<li class="box">CSS 2.0</li>
+		<li>CSS 3.0</li>
+	</ol>
+	<table border="1" cellspacing="0" cellpadding="10">
+		<tr>
+			<th>Sno</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Qualification</th>
+			<th>Phone</th>
+			<th>Status</th>
+		</tr>
+		<tr class="box">
+			<td>1</td>
+			<td>Sachin</td>
+			<td>sachin@gmail.com</td>
+			<td>Mca</td>
+			<td>1234567890</td>
+			<td>Active</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Sachin</td>
+			<td>sachin@gmail.com</td>
+			<td>Mca</td>
+			<td>1234567890</td>
+			<td>Active</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Sachin 2</td>
+			<td>sachin2@gmail.com</td>
+			<td>Mca</td>
+			<td>1234567890</td>
+			<td rowspan="4">Active</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>Sachin3</td>
+			<td>sachin3@gmail.com</td>
+			<td>Mca</td>
+			<td>1234567890</td>
+			<!-- <td>Active</td> -->
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>Sachin4</td>
+			<td>sachin4@gmail.com</td>
+			<td>Mca</td>
+			<td>1234567890</td>
+			<!-- <td>Active</td> -->
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>Sachin5</td>
+			<td>sachin5@gmail.com</td>
+			<td>Mca</td>
+			<td>1234567890</td>
+			<!-- <td>Active</td> -->
+		</tr>
+		<tr>
+			<td colspan="6" align="center">Design and Developed by <a href="https://www.10000coders.co/">10000 coders</a></td>
+		</tr>
+	</table>
+</body>
+</html>

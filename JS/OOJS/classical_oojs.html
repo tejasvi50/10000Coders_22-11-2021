@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Classical Approach - OOJS</title>
+</head>
+<body>
+
+<script>
+	/*
+		what is class?
+
+			- class is a comination of data(properties) and members(methods)
+
+			- Instance of a class is know as 'object'
+
+		Why classes?
+
+			- To encapsulate the data and their behaviour
+
+		How are we going to create a class in es6 ?
+	*/
+
+	class User{
+		// name;
+		// email;
+		// qualification;
+		// experience;
+		constructor(uname,email,qual,exp){
+			this._name = uname;
+			this._email = email;
+			this._qualification = qual;
+			this._experience = exp;
+		}
+		
+		login(){
+			return 'Login functionality';
+		}
+		forgotPassword(){
+
+		}
+		registerUser(){
+
+		}
+	}
+
+	// instance of class
+	let uObj = new User('sachin','sachin@gmail.com','10th','1');
+	console.log(uObj._name)
+	console.log(uObj._email)
+	console.log(uObj._qualification)
+	console.log(uObj._experience)
+	console.log(uObj.login());
+
+	console.log(uObj._name);
+
+
+	class Student extends User{
+		constructor(){
+			super('Murali','murali@gmail.com','mca','12+');
+		}
+		childMethod1(){
+			return this.login();
+		}
+		login(){
+			return 'login functionality child class';
+		}
+	}
+
+	// creating instance
+	let sObj = new Student();
+	console.log(sObj.childMethod1());
+	console.log(sObj._name);
+	console.log(sObj._email);
+	console.log(sObj._qualification);
+	console.log(sObj._experience);
+	console.log(sObj.login());
+</script>
+</body>
+</html>

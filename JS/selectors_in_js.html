@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selectors - JS</title>
+	<style>
+		div{
+			border: 1px solid red;
+			padding: 10px;
+		}
+		section{
+			display: flex;
+		}
+		section div{
+			flex: 1;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<section class="container">
+		<div> HTML</div>
+		<div> CSS</div>
+		<div> JS</div>
+		<div id="react"> ReactJS</div>
+		<div> NodeJS</div>
+	</section>
+	
+<script>
+	/*
+		Selectors - To select an element
+
+		Types
+
+			- getElementsByTagName()
+			- getElementsByClassName()
+			- getElementById()
+			- querySelector()
+			- querySelectorAll()
+	*/
+
+	console.log(document.getElementsByTagName('section'));
+	console.log(document.getElementsByClassName('container'));
+	console.log(document.getElementById('react'));
+	console.log(document.querySelector('section div:last-child'));
+	console.log(document.querySelectorAll('section div'));
+</script>
+</body>
+</html>

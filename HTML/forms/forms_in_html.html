@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forms - HTML</title>
+	<style type="text/css">
+		.loginForm{
+			background-color: #ccc;
+			width: 50%;
+			margin: 0 auto;
+			padding: 20px;
+		}
+		.loginForm input{
+			display: block;
+			width: 100%;
+			margin-bottom: 10px;
+			padding: 10px;
+		}
+
+		.loginForm input[type="text"],
+		.loginForm input[type="password"]{
+			width: 96%;
+		}
+		.loginForm input[type='submit']{
+			background-color: tomato;
+			border:none;
+		}
+	</style>
+</head>
+<body>
+	<!-- 
+		What is form ?
+
+			Forms are used to collect the information from the website visitor.
+
+		what is form attribute?
+
+			- method = 'GET/POST'
+			- action = 'server side url';
+			- enc-type='multipart/form-data';
+			- novalidate - HTML5
+			- autocomplete - HTML5
+
+		How are we going to create a form?
+
+			- By using form elements
+
+		What are the form element?
+
+			- Form element are categorised into the following types
+
+				- Input elements
+					- text        HTML5 -  email,url,search,number,tel,color,date,time,week
+					- password    
+					- hidden
+					- file
+					- radio
+					- checkbox
+				- Dropdown
+					-select
+						- option
+				- multi line text
+
+					- textarea
+
+				- action elements				
+					- submit
+					- reset	
+
+		what element attributes?
+
+			- type
+			- name
+			- value
+
+		HTML 5 validation attribute?
+
+				- required
+				- minlength
+				- maxlength
+				- min
+				- max
+				- pattern
+				- formMethod
+				- formAction
+				- formName
+
+
+	 -->
+	 <!-- Login form -->
+
+	 <form method="POST" action="#" class="loginForm" >
+	 	<h1> Login to you Account</h1>
+	 	<input type="text" name="username" placeholder="Enter Username" required />
+	 	<input type="password" name="password" placeholder="Enter Password" required />
+	 	<input type="submit" name="login" value="Login">
+	 </form>
+
+
+	 <form method="POST" action="#" autocomplete="off" novalidate enctype="multipart/form-data">
+	 	<input type="text" name="firstname" placeholder="Enter First Name" required>
+	 	<input type="email" name="email" placeholder="Enter Email" required>
+	 	<input type="url" name="wesite" placeholder="Enter URL">
+	 	<input type="search" name="searchstring" placeholder="Enter Search string">
+	 	<input type="tel" name="phone" pattern="[0-9]{10}" placeholder="Enter Phone Number" required>
+	 	<input type="number" name="creditcard" placeholder="Enter Creditcard Number">
+
+	 	<input type="color" name="pickcolor">
+
+	 	<input type="file" name="uploadresume">
+	 	<input type="hidden" name="aadhar" value="323232323232">
+	 	<label>Male</label>
+	 	<input type="radio" name="gender" value="male">
+	 	<label>Female</label>
+	 	<input type="radio" name="gender" value="female">
+	 	<label>C</label>
+	 	<input type="checkbox" name="skills" value="c">
+	 	<label>C++</label>
+	 	<input type="checkbox" name="skills" value="cpp">
+	 	<label>HTML</label>
+	 	<input type="checkbox" name="skills" value="html">
+	 	<label>CSS</label>
+	 	<input type="checkbox" name="skills" value="css">
+	 	<select>
+	 		<option value="">---select---</option>
+	 		<option value="ind">India</option>
+	 		<option value="UK">United Kingdom</option>
+	 		<option value="USA">Unites States</option>
+	 	</select>
+	 	<textarea placeholder="Enter your comments"></textarea>
+
+	 	<input type="submit" name="exampleform" value="Example" >
+	 </form>
+</body>
+</html>

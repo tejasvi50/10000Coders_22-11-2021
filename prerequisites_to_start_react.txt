@@ -1,0 +1,72 @@
+* Fundamental Knowledge of Wed Development
+* HTML
+* CSS
+* RWD - Bootstrap
+* AJAX & JSON
+
+* ES6 features are mandatory
+	
+	- var vs let vs const
+	- Arrow functions
+	- Advanced methods
+		- filter
+		- map
+		- reduce
+	- Destructuring
+		- Array Destructuring
+		- Object Destructuring
+
+	- functional propgraming VS Object Oriented Programing
+
+	- Code Collabaration Tools
+
+		- Git 
+		- Gitlab
+		- Bitbucket
+		- Tortoise SVN
+
+	- Wed Dev Tools
+
+	- Design Patterns - Reduces the complexicity
+		- Prototypal
+		- Classical
+		- singleton
+		- factory
+		- MVC
+		- MVT
+		- MVVM
+		- SPA Architecture
+		- Microfrontend Architecture
+
+	- Design Priciples
+		- DRY (Don't Repeat Yourself)
+		- KISS (Keep It Simple Stupid)
+		- YAGNI - You Aren't Gonna Need It
+
+	- Traditional web app Architecture VS SPA(Single Aplication Architecture)
+
+	- Statemanagement
+
+	- Unit Testing
+
+	- SDLC (Software Development life Cycle) - 6 Phases
+		- SRS
+		- Analysis, Design & Planning
+		- Implementation / Coding
+		- Testing
+		- Deployment
+		- Maintainance
+
+	- Software Methodlogies
+		- Waterfall model
+		- Incremental Model
+		- Spiral Model
+		- V-Model
+		- Agile Methology(Major)
+
+Steps to create a ReactProject?
+
+	- Install NodeJS in to your Machine
+	- What NPM ?
+	- what is create-react-app cli tool?
+

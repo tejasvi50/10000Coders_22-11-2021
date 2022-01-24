@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Regular expressions - JS</title>
+</head>
+<body>
+	<form>
+		<input type="text" name="aadhar" id="aadhar" placeholder="Please Enter your Aadhar" />
+		<input type="submit" name="aadharsubmit" value="Aadhar Submit" onclick="validateAadhar(event)">
+	</form>
+
+<script>
+	function validateAadhar(event){
+
+		event.preventDefault();
+
+		let aadharInput = document.getElementById('aadhar').value;
+
+		let aadharExp = "^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$";
+
+		console.log(aadharInput.match(aadharExp));
+
+		//console.log(aadharExp.test(aadharInput));
+
+		if(aadharInput.match(aadharExp)!=null){
+
+			alert('Given Aadhar is valid');
+		}else{
+			document.getElementById('aadhar').style.border = '1px solid red';
+			alert('Given Aadhar is invalid');
+		}
+
+		// if(aadharExp.test(aadharInput)){
+
+		// 	alert('Given Aadhar is valid');
+		// }else{
+		// 	document.getElementById('aadhar').style.border = '1px solid red';
+		// 	alert('Given Aadhar is invalid');
+		// }
+	}
+</script>
+</body>
+</html>

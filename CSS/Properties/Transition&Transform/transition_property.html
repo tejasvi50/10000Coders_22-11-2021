@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trasition - HTML</title>
+	<style>
+		.multiColor{
+			text-align: center;
+			border: 1px solid red;
+			transition-property: background-color,color,border;
+			transition-duration: 3s;
+			transition-delay: 1s;			
+			transition-timing-function: ease-in-out;
+			/*transition: background-color 10s 1s ease-in-out;*/
+		}
+		.multiColor:hover{
+			background-color: orange;
+			color: #fff;
+			border: 10px dashed #ccc;
+		}
+	</style>
+</head>
+<body>
+	<section class="multiColor">
+		<h3>Child 1</h3>
+	</section>
+</body>
+</html>
