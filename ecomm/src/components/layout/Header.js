@@ -105,6 +105,30 @@ let Header = () => {
         </div>
       </div>
     </nav>
+    // <header class="navbar navbar-expand-lg  bg-info mb-2">
+    // <span class="navbar-brand">
+    // <img src="../../../Images/d3.jpeg" alt="icon" class="px-1" />
+    // </span>
+    // <a  href="Home page.html" class="p-3 text-decoration-none">Home</a>
+    // <a class="p-3 text-decoration-none">About</a>
+    // <div class="dropdown">
+    //   <a  class=" dropdown-toggle p-2 text-decoration-none" data-bs-toggle="dropdown">Services</a>
+    //   <ul class="dropdown-menu bg-light">
+    //     <li><a class="dropdown-item " href="Web.html">Web Development</a></li>
+    //     <li><a class="dropdown-item" href="Mobile.html">Mobile App Development</a></li>
+    //     <li><a class="dropdown-item" href="Cloud.html">Cloud Computing</a></li>
+    //   </ul>
+    // </div>
+    // <a class="p-3 text-decoration-none">Clients</a>
+    // <a class="p-3 text-decoration-none">Blog</a>
+    // <a class="p-3 text-decoration-none">Contact</a>
+    // <form class="d-flex ms-5">
+    //   <input class="form-control mx-5" type="search" placeholder="Search" aria-label="Search" />
+    //   <button class="btn btn-outline-success" type="submit">Search</button>
+    // </form>
+
+    // <button type="button" class="btn btn-primary mx-auto d-block mt-5 bg-primary btn border-primary m-5 px-4" data-bs-toggle="modal" data-bs-target="#modalForm">Login</button> 
+    // </header>
   );
 };
 
